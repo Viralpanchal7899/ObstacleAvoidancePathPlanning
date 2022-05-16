@@ -33,7 +33,14 @@ plot(x_g,y_g,'d');
 path = planner(x_s,y_s,x_g,y_g,obstacles);
 path(size(path,1),1) = x_g;
 path(size(path,1),2) = y_g;
-hold on
-plot(path(:,1),path(:,2),'ro','MarkerSize',5);
-hold on 
-plot(path(:,1),path(:,2),'k','LineWidth',2);
+
+for i = 1:size(path,1)
+    hold on
+    plot(path(i,1),path(i,2),'ro','MarkerSize',5);
+    if i>1
+        hold on 
+        plot([path(i,1) path(i-1,1)],[path(i,2) path(i-1,2)],'k','LineWidth',2);
+    end
+    pause(.1)
+end
+
