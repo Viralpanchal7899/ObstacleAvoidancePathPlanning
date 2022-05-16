@@ -5,7 +5,7 @@ function [obs_x,obs_y] = obstacle_check(path_x,path_y,obstacles)
 % C - 2 units to left of path point
 % D - 2 units below the path point
 
-A(1,1) = path_x + 2;
+A(1,1) = path_x + 1;
 A(1,2) = path_y;
 if range(A(1,1),A(1,2),obstacles) == 0
     obs_x(1,1) = 0;
@@ -14,14 +14,14 @@ else
 end
 
 B(1,1) = path_x;
-B(1,2) = path_y + 2;
+B(1,2) = path_y + 1;
 if range(B(1,1),B(1,2),obstacles) == 0
     obs_y(1,1) = 0;
 else
     obs_y(1,1) = 1;
 end
 
-C(1,1) = path_x - 2;
+C(1,1) = path_x - 1;
 C(1,2) = path_y;
 if range(C(1,1),C(1,2),obstacles) == 0
     obs_x(1,2) = 0;
@@ -30,7 +30,7 @@ else
 end
 
 D(1,1) = path_x;
-D(1,2) = path_y - 2;
+D(1,2) = path_y - 1;
 if range (D(1,1),D(1,2),obstacles) == 0
     obs_y(1,2) = 0;
 else

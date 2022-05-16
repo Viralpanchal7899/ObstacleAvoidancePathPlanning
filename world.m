@@ -23,7 +23,7 @@ hold on
 x_s = 2;
 y_s = 6;
 x_g = 9;
-y_g = 8;
+y_g = 3;
 hold on 
 plot(x_s,y_s,'*');
 plot(x_g,y_g,'d');
@@ -31,7 +31,9 @@ plot(x_g,y_g,'d');
 % Calling Planner
 
 path = planner(x_s,y_s,x_g,y_g,obstacles);
+path(size(path,1),1) = x_g;
+path(size(path,1),2) = y_g;
 hold on
-plot(path(:,1),path(:,2),'*');
+plot(path(:,1),path(:,2),'ro','MarkerSize',5);
 hold on 
-plot(path(:,1),path(:,2),'b');
+plot(path(:,1),path(:,2),'k','LineWidth',2);
