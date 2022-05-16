@@ -28,3 +28,10 @@ hold on
 plot(x_s,y_s,'*');
 plot(x_g,y_g,'d');
 
+% Calling Planner
+
+path = planner(x_s,y_s,x_g,y_g,obstacles);
+hold on
+plot(path(:,1),path(:,2),'*');
+hold on 
+plot(path(:,1),path(:,2),'b');

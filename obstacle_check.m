@@ -7,7 +7,7 @@ function [obs_x,obs_y] = obstacle_check(path_x,path_y,obstacles)
 
 A(1,1) = path_x + 2;
 A(1,2) = path_y;
-if range(A(1,1),A(1,2),obstcales) == 0
+if range(A(1,1),A(1,2),obstacles) == 0
     obs_x(1,1) = 0;
 else
     obs_x(1,1) = 1;
@@ -23,7 +23,7 @@ end
 
 C(1,1) = path_x - 2;
 C(1,2) = path_y;
-if range(C(1,1),C(1,2),obstcles) == 0
+if range(C(1,1),C(1,2),obstacles) == 0
     obs_x(1,2) = 0;
 else
     obs_x(1,2) = 1;
@@ -31,7 +31,7 @@ end
 
 D(1,1) = path_x;
 D(1,2) = path_y - 2;
-if range (D(1,1),D(1,2),obstcles) == 0
+if range (D(1,1),D(1,2),obstacles) == 0
     obs_y(1,2) = 0;
 else
     obs_y(1,2) = 1;
